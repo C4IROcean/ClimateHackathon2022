@@ -9,7 +9,7 @@ Concepts like “green corridors” (specific trade routes between major port hu
 HUB Ocean's unique vessel emissions datasets, form the foundation for this challange, providing vessel emissions and traffic data from gridded density maps down to hourly emissions for almost every larger vessel in the world.
 
 <br>***Gridded vessel emissions*** <br>
-Xarray style dataset with vessel emissions and total hours per month and vessel type. Vessel types avalable are tanker, cargo, passenger, fishing and total (all vessels). The data is stored as .zarr files in the folder ```zarr/vessel_emissions_and_traffic/``` in blob storage. See Tutorial 1 for how to use.
+Xarray style dataset with vessel emissions and total hours per month and vessel type. Vessel types avalable are tanker, cargo, passenger, fishing and total (all vessels). The data is stored as .zarr files in the folder ```zarr/vessel_emissions_and_traffic/``` in blob storage. This dataset can be used to find the most polluting routes, and estimate the potential for green corridors with alternative fuel infrastructure. his dataset can be used to see how traffic or emissions change over time in a geographical area. See Tutorial 1 for how to use.
  <br><img src="figs/cargo_co2_seasia.png" alt="CO2 emissions from cargo vessels" width="400"/>
  
 <br>***Voyage emissions tables***<br>
@@ -17,7 +17,7 @@ Pandas style dataset consisting of from/to ports and total co2 emission per vess
 <br><img src="figs/voyage_tables.png" alt="Voyage tables" width="600"/>
 
 <br>***Hourly emissions data per vessel***<br> 
-The raw emissions data that the other datasets are derived from. It consists of timestamps, coordinates and hourly emissions in grams for CO2 and other gases to air. The data is available in a PostgreSQL database through the function ```get_emissions_from_vessel(int mmsi)```. See Tutorial 3 for how to use.
+The raw emissions data that the other datasets are derived from. It consists of timestamps, coordinates and hourly emissions in grams for CO2 and other gases to air. The data is available in a PostgreSQL database through the function ```get_emissions_from_vessel(int mmsi)```. This database table can be used to look at specific vessels and to do spot checks of the voyage tables. See Tutorial 3 for how to use.
 vessel_emissions_per_ship
 <br><img src="figs/vessel_emissions_per_ship.png" alt="CO2 emissions per vessel" width="400"/>
  
